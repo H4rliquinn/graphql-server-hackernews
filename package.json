@@ -1,0 +1,8 @@
+{
+  "name": "graphql-server-hackernews",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:H4rliquinn/graphql-server-hackernews.git",
+  "author": "Jason Sonnichsen <Harliquinn@gmail.com>",
+  "license": "MIT"
+}
