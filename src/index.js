@@ -5,6 +5,7 @@ type Query{
     info:String!
     users:[User!]!
     user(id:ID!):User
+    feed:[Link!]!
 }
 
 type Mutation{
@@ -14,11 +15,31 @@ type Mutation{
 type User {
     id: ID!
     name: String!
-  }`;
+  }
+
+type Link{
+    id:ID!
+    description: String!
+    url: String!
+}
+`;
+let links = [
+  {
+    id: "link-0",
+    url: "www.hottographql.com",
+    description: "Fullstack tutorial for GraphQL"
+  }
+];
 
 const resolvers = {
   Query: {
-    info: () => `This is the API of a Hackernews Clone`
+    info: () => `This is the API of a Hackernews Clone`,
+    feed: () => links
+  },
+  Link: {
+    id: parent => parent.id,
+    description: parent => parent.description,
+    url: parent => parent.url
   }
 };
 
