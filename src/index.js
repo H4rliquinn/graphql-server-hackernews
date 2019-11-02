@@ -17,7 +17,18 @@ let idCount = links.length;
 const resolvers = {
   Query: {
     info: () => `This is the API of a Hackernews Clone`,
-    feed: () => links
+    feed: () => links,
+    link: (parent, args) => {
+      console.log("Sending Back ID: " + args.id);
+      let retVal = "";
+      links.forEach(x => {
+        if (x.id === args.id) {
+          console.log(x + ":" + x.id + "/" + args.id);
+          retVal = x;
+        }
+      });
+      return retVal;
+    }
   },
   //Trivial - Automatic
   // ,
