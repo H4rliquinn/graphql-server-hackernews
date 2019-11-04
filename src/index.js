@@ -49,6 +49,36 @@ const resolvers = {
       };
       links.push(link);
       return link;
+    },
+    updateLink: (id, args) => {
+      let retVal = "";
+      links.forEach(x => {
+        if (x.id === args.id) {
+          if (args.url != null) {
+            x.url = args.url;
+          }
+          if (args.description != null) {
+            x.description = args.description;
+          }
+          retVal = x;
+        }
+      });
+      return retVal;
+    },
+
+    deleteLink: (parent, args) => {
+      let rem = "";
+      let ret = "";
+
+      for (let x = 0; x < links.length; x++) {
+        if (links[x].id === args.id) {
+          console.log("rem=" + x);
+          rem = x;
+          ret = links[x];
+        }
+      }
+      links.splice(rem, 1);
+      return ret;
     }
   }
 };
