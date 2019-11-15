@@ -5,6 +5,9 @@
   "repository": "git@github.com:H4rliquinn/graphql-server-hackernews.git",
   "author": "Jason Sonnichsen <Harliquinn@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "graphql-yoga": "^1.18.3",
