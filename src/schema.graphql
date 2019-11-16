@@ -3,6 +3,7 @@ type Query {
   users: [User!]!
   user(id: ID!): User
   feed: [Link!]!
+  votes: [Vote!]!
   link(id: ID!): Link
 }
 
@@ -18,6 +19,7 @@ type Mutation {
 
 type Subscription {
   newLink: Link
+  newVote: Vote
 }
 
 type AuthPayload {
