@@ -2,7 +2,7 @@ type Query {
   info: String!
   users: [User!]!
   user(id: ID!): User
-  feed: [Link!]!
+  feed(filter: String): [Link!]!
   votes: [Vote!]!
   link(id: ID!): Link
 }
