@@ -5,7 +5,7 @@ const Mutation = require("./resolvers/Mutation");
 const Subscription = require("./resolvers/Subscription");
 const User = require("./resolvers/User");
 const Link = require("./resolvers/Link");
-
+const Vote = require("./resolvers/Vote");
 // let links = [
 //   {
 //     id: "link-0",
@@ -25,7 +25,8 @@ const resolvers = {
   Mutation,
   Subscription,
   User,
-  Link
+  Link,
+  Vote
 
   // Query: {
   //   info: () => `This is the API of a Hackernews Clone`,
